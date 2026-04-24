@@ -327,52 +327,43 @@ class MyFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
-    // Масштабируем диаметр кнопки относительно ширины экрана
-    final double size = mini ? screenWidth * 0.12 : screenWidth * 0.18;
-
-    return SizedBox(
-      width: size,
-      height: size,
-      child: isExtended
-          ? FloatingActionButton.extended(
-              onPressed: onPressed,
-              tooltip: tooltip,
-              foregroundColor: foregroundColor,
-              backgroundColor: backgroundColor,
-              heroTag: heroTag,
-              elevation: elevation,
-              focusElevation: focusElevation,
-              hoverElevation: hoverElevation,
-              highlightElevation: highlightElevation,
-              disabledElevation: disabledElevation,
-              shape: shape,
-              clipBehavior: clipBehavior,
-              focusNode: focusNode,
-              autofocus: autofocus,
-              materialTapTargetSize: materialTapTargetSize,
-              label: child, // ✅ extended использует label
-            )
-          : FloatingActionButton(
-              onPressed: onPressed,
-              tooltip: tooltip,
-              foregroundColor: foregroundColor,
-              backgroundColor: backgroundColor,
-              heroTag: heroTag,
-              elevation: elevation,
-              focusElevation: focusElevation,
-              hoverElevation: hoverElevation,
-              highlightElevation: highlightElevation,
-              disabledElevation: disabledElevation,
-              mini: mini,
-              shape: shape,
-              clipBehavior: clipBehavior,
-              focusNode: focusNode,
-              autofocus: autofocus,
-              materialTapTargetSize: materialTapTargetSize,
-              child: child, // ✅ теперь стоит последним
-            ),
-    );
+    return isExtended
+        ? FloatingActionButton.extended(
+            onPressed: onPressed,
+            tooltip: tooltip,
+            foregroundColor: foregroundColor,
+            backgroundColor: backgroundColor,
+            heroTag: heroTag,
+            elevation: elevation,
+            focusElevation: focusElevation,
+            hoverElevation: hoverElevation,
+            highlightElevation: highlightElevation,
+            disabledElevation: disabledElevation,
+            shape: shape,
+            clipBehavior: clipBehavior,
+            focusNode: focusNode,
+            autofocus: autofocus,
+            materialTapTargetSize: materialTapTargetSize,
+            label: child, // extended использует label
+          )
+        : FloatingActionButton(
+            onPressed: onPressed,
+            tooltip: tooltip,
+            foregroundColor: foregroundColor,
+            backgroundColor: backgroundColor,
+            heroTag: heroTag,
+            elevation: elevation,
+            focusElevation: focusElevation,
+            hoverElevation: hoverElevation,
+            highlightElevation: highlightElevation,
+            disabledElevation: disabledElevation,
+            mini: mini,
+            shape: shape,
+            clipBehavior: clipBehavior,
+            focusNode: focusNode,
+            autofocus: autofocus,
+            materialTapTargetSize: materialTapTargetSize,
+            child: child, // child теперь на последнем месте
+          );
   }
 }

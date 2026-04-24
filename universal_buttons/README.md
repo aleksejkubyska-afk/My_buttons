@@ -57,13 +57,11 @@ MyPopupMenuButton(
   ],
 );
 
-Scaffold(
-  floatingActionButton: MyFloatingActionButton(
+ MyFloatingActionButton(
     onPressed: () {},
     child: const Icon(Icons.add),
     tooltip: 'Add Item',
     isExtended: false,
-  ),
 );
 ```
 
